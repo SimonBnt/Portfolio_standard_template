@@ -1,16 +1,16 @@
-const menuBurgerOpenerContainer = document.getElementById("menuBurgerOpenerContainer")
-const menuBurgerCloserContainer = document.getElementById("menuBurgerCloserContainer")
+const burgerMenuOpenerContainer = document.getElementById("burgerMenuOpenerContainer")
+const burgerMenuCloserContainer = document.getElementById("burgerMenuCloserContainer")
 const burgerMenu = document.getElementById("burgerMenu")
 
 
-menuBurgerOpenerContainer.addEventListener("click", () => {
+burgerMenuOpenerContainer.addEventListener("click", () => {
     burgerMenu.style.display = "block"
-    menuBurgerOpenerContainer.style.display = "none"
-    menuBurgerCloserContainer.style.display = "block"
+    burgerMenuOpenerContainer.style.display = "none"
+    burgerMenuCloserContainer.style.display = "block"
 })
 
-menuBurgerCloserContainer.addEventListener("click", () => {
+burgerMenuCloserContainer.addEventListener("click", () => {
     burgerMenu.style.display = "none"
-    menuBurgerOpenerContainer.style.display = "block"
-    menuBurgerCloserContainer.style.display = "none"
+    burgerMenuOpenerContainer.style.display = "block"
+    burgerMenuCloserContainer.style.display = "none"
 })

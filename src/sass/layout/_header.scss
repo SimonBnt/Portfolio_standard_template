@@ -14,7 +14,7 @@ header {
         display: flex;
         align-items: center;
 
-        #logoContainer {
+        #logo-colorModeContainer {
             display: flex;
             align-items: center;
             gap: 0 1rem;
@@ -23,6 +23,10 @@ header {
             @include respondTo(md) {
                 margin-left: 4rem;
             }
+
+            #logo {
+                border: #0671C4 solid;
+            }
     
             img {
                 width: 42px;
@@ -30,50 +34,44 @@ header {
                 border-radius: 100%;
                 object-fit: cover;
                 display: block;
-                border: #0671C4 solid 2px;
             }
-        }
-    
-        #navbar {
-            display: none;
 
-            @include respondTo(md) {
-                display: block;
-            }
-    
-            ul {
+            #colorModeContainer {
                 display: flex;
-                gap: 0 2rem;
+                gap: 0 1rem;
                 
-                @include respondTo(md) {
-                    gap: 0 4rem;
-                    margin-right: 4rem;
-                }
-    
-                li {
-                    a {
-                        color: #333;
-                        text-decoration: none;
+                #darkModeBtn {
+                    img {
+                        background-color: #333;
+                    }
+                }    
+
+                .colorModeBtns {
+                    .colorModeBtnImg {
+                        background-color: white;
+                        width: 32px;
+                        height: 32px;
                         transition: 0.3s;
 
-                        @include respondTo(md) {
-                            &:hover {
-                                color: #0671C4;
-                                cursor: pointer;
-                                transition: 0.3s;
-                            }
-
-                            &:active {
-                                color: #05406d;
-                                transition: none;
-                            }
+                        &:hover {
+                            cursor: pointer;
+                            transition: 0.3s;
+                            transform: translateY(-2px);
                         }
                     }
                 }
+
+                #darkModeBtn.noActive {
+                    display: none;
+                }
+
+                #lightModeBtn.noActive {
+                    display: none;
+                }
             }
         }
     
-        #burgerMenuOpenerContainer {
+        #burgerMenuMainContainer {
             text-align: right;
 
             @include respondTo(md) {
@@ -92,7 +90,7 @@ header {
                 }
             }
     
-            #menuBurgerCloserContainer {
+            #burgerMenuCloserContainer {
                 display: none;
             }
         }

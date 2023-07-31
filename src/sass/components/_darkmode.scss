@@ -1,0 +1,59 @@
+.dark {
+    header {
+        background-color: #444;
+        color: white;
+
+        #headerMainContentContainer {
+            #logo-colorModeContainer {
+                #logo {
+                    border: solid orange;
+                }
+            }
+
+            #navbar {
+                background-color: #444;
+
+                li {
+                    a {
+                        color: white;
+    
+                        .navbarIcons {
+                            width: 32px;
+                            filter: invert(100%);
+                        }
+
+                        .navbarTxt {
+                            @include respondTo(md) {
+                                &:hover {   
+                                    color: orange;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            #burgerMenuMainContainer {
+                .burgerMenuImgContainer {
+                    img {
+                        filter: invert(100%);
+                    }
+                }
+            }
+        }
+
+        #burgerMenu {
+            li {
+                border-bottom: white solid 1px;
+
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+
+    // main {
+
+    // }
+}
