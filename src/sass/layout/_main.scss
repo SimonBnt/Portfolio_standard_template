@@ -80,6 +80,95 @@ main {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='119' height='119' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23c6c6c6' fill-opacity='0.02'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.02'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
 
         #homeContentMainContainer {
+            z-index: 1;
+            
+            #homeMainContentContainer {
+                position: relative;
+                overflow: hidden;
+                
+                @include respondTo(md) {
+                    border: solid 8px #444;
+                    border-radius: 0.5rem;
+                    display: grid;
+                    gap: 4rem 0;
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                    margin-top: 4rem;
+                    height: 80%;
+                }
+
+                #homeImg {
+                    display: none;
+                    
+                    @include respondTo(md) {
+                        display: block;
+                        bottom: -40%;
+                        left: -5%;
+                        position: absolute;
+                        width: 512px;
+                        opacity: 0.85;
+                    }
+                }
+                    
+                #titleContainer {
+                    grid-column: 1/3;
+                }
+                
+                #homeSpeechAndCtaContainer {
+                    grid-column: 2;
+                    grid-row: 2;
+
+                    @include respondTo(md) {
+                        margin: 2rem;
+                    }
+
+                    #speechContainer {
+                        text-align: center;
+
+                        @include respondTo(md) {
+                            text-align: left;
+                        }
+
+                        h2 {
+                            color: #0671C4;
+                            font-size: 1.25rem;
+                        }
+
+                        p {
+                            margin: 1rem 0 2rem 0;
+                        }
+                    }
+
+                    #homeCtaMainContainer {
+                        margin-bottom: 2rem;
+                        
+                        #homeCta {
+                            all: unset !important;
+                            border: solid #0671C4 2px !important;
+                            border-radius: 0.5rem !important;
+                            padding: 0.5rem !important;
+                            text-transform: uppercase !important;
+                            text-decoration: none !important;
+                            color: #0671C4 !important;
+                            display: flex !important;
+                            align-items: center !important;
+                            justify-content: center !important;
+                            gap: 0 1rem !important;
+                            width: fit-content !important;
+                            margin: 0 auto !important;
+
+                            @include respondTo(md) {
+                                margin: inherit !important;
+                            }
+                    
+                            #homeCtaImg {
+                                width: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+
             .homeContentContainers {
                 margin: 4rem 0;
 
@@ -94,6 +183,9 @@ main {
                     text-align: center;
                     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
                     letter-spacing: 0.25rem;
+                    position: relative;
+                    width: fit-content;
+                    margin: 0 auto;
 
                     @include respondTo(sm) {
                         font-size: 2rem;
@@ -105,6 +197,21 @@ main {
 
                     @include respondTo(lg) {
                         font-size: 3rem;
+                    }
+
+                    #titleImg {
+                        display: none;
+
+                        @include respondTo(md) {
+                            display: block;
+                            position: absolute;
+                            width: 124px;
+                            right: 20%;
+                            bottom: 50%;
+                            transform: translateY(50%);
+                            z-index: -1;
+                            opacity: 0.2;
+                        }
                     }
                 }
                 
