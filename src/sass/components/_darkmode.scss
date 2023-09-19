@@ -1,21 +1,15 @@
 .dark {
     header {
-        background-color: #444;
-        color: white;
+        background-color: #333;
+        color: #25ad3c;
 
         #headerMainContentContainer {
-            #logo-colorModeContainer {
-                #logo {
-                    border: solid orange;
-                }
-            }
-
             #navbar {
-                background-color: #444;
+                background-color: #333;
 
                 li {
                     a {
-                        color: white;
+                        color: #25ad3c;
     
                         .navbarIcons {
                             width: 32px;
@@ -25,7 +19,7 @@
                         .navbarTxt {
                             @include respondTo(md) {
                                 &:hover {   
-                                    color: orange;
+                                    color: #25ad3c;
                                 }
                             }
                         }
@@ -44,21 +38,126 @@
 
         #burgerMenu {
             li {
-                border-bottom: white solid 1px;
+                border-bottom: #25ad3c solid 1px;
 
                 a {
-                    color: white;
+                    color: #25ad3c;
                 }
             }
         }
     }
 
     main {
+        section {
+            color: black;
+
+            h4, strong {
+                color: #25ad3c !important;
+            }
+
+            .sectionTitle {
+                color: #25ad3c !important;
+                
+                &::after {
+                    background-color: #25ad3c !important;
+                }
+            }
+
+            .cta {
+                color: black;
+                background-color: #25ad3c;
+            }
+        }
+
         #homeSection {
-            background-color: #555;
+            background-color: #444;
 
             #homeMainContentContainer {
-                border: solid 8px black !important;
+                @include respondTo(md) {
+                    border: solid 8px #25ad3c !important;
+                }
+
+                #titleContainer {
+                    h1 {
+                        color: #25ad3c !important;
+                    }
+                }
+
+                #homeSpeechAndCtaContainer {
+                    h2 {
+                        color: #25ad3c !important;
+                    }
+    
+                    p {
+                        color: black;
+                    }
+    
+                    #homeCtaMainContainer {
+                        #homeCta {
+                            border: #25ad3c solid 2px !important;
+    
+                            p {
+                                color: #25ad3c;
+                            }
+                        }
+                    }
+                }
+            }
+
+            #rightSidenavContainer {
+                background-color: #25ad3c !important;
+            }
+
+            #mouse {
+                border: solid #25ad3c 2px;
+                
+                #scrollContainer {
+                    &::before {
+                        background-color: #25ad3c;
+                    }
+                }
+            }
+        }
+
+        #aboutSection {
+            background-color: #555;
+            color: black;
+
+            h2, h3, strong {
+                color: #25ad3c !important;
+            }
+
+            #skillsContainer {
+                .skills {
+                    color: black !important;
+                    background-color: #25ad3c !important;
+                }
+            }
+
+        }
+
+        #projectsSection {
+            background-color: #444;
+        }
+
+        #contactSection {
+            background-color: #333;
+        }
+
+        #map {
+            border-top: #25ad3c solid;
+            border-bottom: #25ad3c solid;
+        }
+    }
+
+    footer {
+        h2, #footerName {
+            color: #25ad3c !important;
+        }
+        
+        #propertyContainer {
+            a {
+                color: #25ad3c;
             }
         }
     }
