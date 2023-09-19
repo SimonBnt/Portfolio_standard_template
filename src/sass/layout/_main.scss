@@ -465,5 +465,10 @@ main {
 
     #contactSection {
         background-color: #eee;
+
+        #contactFormContainer {
+            margin: 0 auto;
+            border: solid 2px black;            
+        }
     }
 }

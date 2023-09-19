@@ -23,6 +23,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni&family=Roboto+Flex&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- style sheet -->
     
@@ -40,6 +44,7 @@
     <script src="assets/js/burgermenu.js" defer></script>
     <script src="assets/js/map.js" defer></script>
     <script src="assets/js/persistantColorMode.js" defer></script>
+    <script src="assets/js/formValidation.js" defer></script>
 </head>
 <body>
     <header>
@@ -301,8 +306,52 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores repudiandae cumque quasi debitis illo consequuntur, temporibus exercitationem pariatur itaque impedit!</p>
                 </div>
             </div>
-            <div class="contactFormContainer">
-                <form action="#">form</form>
+
+            <!-- contact form -->
+
+            <div class="formMainContainer" id="contactFormContainer">
+                <div class="card">
+                    <div class="cardLogoContainer">
+                        <img src="https://cdn-icons-png.flaticon.com/128/1182/1182791.png" alt="brain svg" class="formLogo">
+                    </div>
+                    <div class="cardHeader">
+                        <h3 class="formTitle">Contact us</h3>
+                        <p class="formTxt">Please fill this form before submitting</p>
+                    </div>
+                    <form action="./assets/inc/contactForm_process.php" method="POST" class="forms" id="contactForm">
+                        <div class="formItem">
+                            <label for="name"></label>
+                            <div class="inputContainers">
+                                <span class="itemIcon material-symbols-outlined">person</span>
+                                <input type="text" name="name" id="nameInput" aria-describedby="nameError nameValidation" class="formInput" placeholder="Enter your full name" onblur="validateName(this)" required>
+                            </div>
+                            <div class="nameValidation" aria-live="polite"></div>
+                            <div class="nameError" aria-live="polite"></div>
+                        </div>
+                        <div class="formItem">
+                            <label for="email"></label>
+                            <div class="inputContainers">
+                                <span class="itemIcon material-symbols-outlined">mail</span>
+                                <input type="email" name="email" id="emailInput" class="formInput" aria-describedby="emailError emailValidation" placeholder="Enter Email" onblur="validateEmail(this)" required>
+                            </div>
+                            <div class="emailValidation" aria-live="polite"></div>
+                            <div class="emailError" aria-live="polite"></div>
+                        </div>
+                        <div class="formItem">
+                            <label for="message"></label>
+                            <div class="inputContainers">
+                                <span class="itemIcon material-symbols-outlined">comment</span>
+                                <input type="text" name="message" aria-describedby="messageError messageValidation" class="formInput messageInput" placeholder="Your message" onblur="validateMessage(this)" required>
+                            </div>
+                            <div class="messageValidation" aria-live="polite"></div>
+                            <div class="messageError" aria-live="polite"></div>
+                        </div>
+                        <button class="formBtn" name="submit" type="submit">submit</button>
+                        <div class="errorMessagesContainers">
+                            <div id="contactErrorMessage"></div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
 
