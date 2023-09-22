@@ -87,6 +87,7 @@ main {
                 overflow: hidden;
                 
                 @include respondTo(md) {
+                    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
                     border: solid 8px #444;
                     border-radius: 0.5rem;
                     display: grid;
@@ -469,6 +470,181 @@ main {
         #contactFormContainer {
             margin: 0 auto;
             border: solid 2px black;            
+        }
+    }
+
+    #gallery {
+        h1 {
+            margin: 4rem 0 2rem 0;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            text-align: right;
+            color: #0671C4;
+            
+            @include respondTo(md) {
+                text-align: center;
+                margin-top: 6rem;
+                font-size: 2.5rem;
+            }
+        }
+
+        #galleryMainContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem 0;
+    
+            @include respondTo(md) {
+                width: 90%;
+                margin: 4rem auto;
+                border-radius: 0.5rem;
+
+                .projectsGalleryMainsContainers.right {
+                    .projectsGalleryTitles {
+                        left: 2rem;
+                    }
+        
+                    .projectsGalleryContainers {
+                        img {
+                            grid-column: 2;
+                            grid-row: 1;
+                            margin-left: auto;
+                            object-fit: cover;
+                            box-sizing: border-box;
+                            display: block;
+                            border-top-right-radius: 0.5rem;
+                            border-bottom-right-radius: 0.5rem;
+                        }
+                        
+                        .projectsGalleryCtaDescriptionContainer {
+                            grid-column: 1;
+                            grid-row: 1;
+                        }
+                    }
+                }
+        
+                .projectsGalleryMainsContainers.left {
+                    .projectsGalleryTitles {
+                        right: 2rem;
+                    }
+        
+                    .projectsGalleryContainers {
+                        img {
+                            grid-column: 1;
+                            grid-row: 1;
+                            margin-right: auto;
+                            object-fit: cover;
+                            border-top-left-radius: 0.5rem;
+                            border-bottom-left-radius: 0.5rem;
+                        }
+                        
+                        .projectsGalleryCtaDescriptionContainer {
+                            grid-column: 2;
+                            grid-row: 1;
+                        }
+                    }
+                }
+            }
+    
+            .projectsGalleryMainsContainers {
+                position: relative;
+    
+                &:not(:last-child)::after {
+                    content: "";
+                    width: 8rem;
+                    height: 2px;
+                    background-color: #444;
+                    position: absolute;
+                    bottom: -2rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+    
+                    @include respondTo(md) {
+                        display: none;
+                    }
+                }
+    
+                .projectsGalleryTitles {
+                    margin-bottom: 0.75rem;
+                    font-size: 1.25rem;
+    
+                    @include respondTo(md) {
+                        font-size: 2rem;
+                        position: absolute;
+                        top: 2rem;
+                    }
+                }
+    
+                .projectsGalleryContainers {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem 0;
+                    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+                    border-radius: 0.5rem;
+                    text-align: center;
+                    
+                    @include respondTo(md) {
+                        border-radius: 0.5rem;
+                        display: grid;
+                        grid-column: 1fr 1fr;
+                        align-items: center;
+                    }
+        
+                    .projectsGalleryImgs {
+                        border-top-right-radius: 0.5rem;
+                        border-top-left-radius: 0.5rem;
+                        object-fit: cover;
+                        display: block;    
+
+                        @include respondTo(md) {
+                            border-top-right-radius: 0;
+                            border-top-left-radius: 0;
+                        }
+                    }
+                    
+                    .projectsGalleryCtaDescriptionContainer {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2rem 0;
+
+                        .projectsGalleryDescriptions {
+                            margin-bottom: 1rem;
+                            
+                            @include respondTo(md) {
+                                font-size: 1.75rem;
+                                line-height: 3rem;
+                                margin: 0 20%;
+                            }
+    
+                            strong {
+                                color: #0671C4;
+                            }
+                        }
+
+                        .projectsGalleryCta {
+                            color: white;
+                            text-decoration: none;
+                            background-color: #0671C4;
+                            padding: 0.5rem;
+                            border-bottom: solid #333 2px;
+                            border-right: solid #333 2px;
+                            border-radius: 0.5rem;
+                            text-transform: uppercase;
+                            transition: 0.3s;
+                            margin: 0 auto 2rem auto;
+                            
+                            @include respondTo(md) {
+                                margin: 0 auto;
+
+                                &:hover {
+                                    transition: 0.3s;
+                                    color: #333;
+                                    transform: translateY(-2px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

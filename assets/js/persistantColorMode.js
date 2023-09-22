@@ -2,7 +2,7 @@ const darkModeBtn = document.getElementById("darkModeBtn")
 const lightModeBtn = document.getElementById("lightModeBtn")
 const body = document.body
 
-if (sessionStorage.getItem("colormode") == "lightmode") {
+if (sessionStorage.getItem("colormode") == "darkmode") {
     darkMode()
 } else {
     lightMode()
@@ -19,11 +19,11 @@ darkModeBtn.addEventListener("click", () => {
 function lightMode() {
     if (lightModeBtn.classList.contains("active")) {
     
-        lightModeBtn.classList.add("noActive")
         lightModeBtn.classList.remove("active")
+        lightModeBtn.classList.add("noActive")
 
-        darkModeBtn.classList.add("active")
         darkModeBtn.classList.remove("noActive")
+        darkModeBtn.classList.add("active")
 
         body.classList.remove("dark")
         body.classList.add("light")
@@ -35,11 +35,11 @@ function lightMode() {
 function darkMode() {
     if (darkModeBtn.classList.contains("active")) {
     
-        darkModeBtn.classList.add("noActive")
         darkModeBtn.classList.remove("active")
+        darkModeBtn.classList.add("noActive")
 
-        lightModeBtn.classList.add("active")
         lightModeBtn.classList.remove("noActive")
+        lightModeBtn.classList.add("active")
 
         body.classList.remove("light")
         body.classList.add("dark")

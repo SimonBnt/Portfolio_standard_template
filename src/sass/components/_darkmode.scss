@@ -1,7 +1,7 @@
 .dark {
     header {
         background-color: #333;
-        color: #25ad3c;
+        color: mediumspringgreen;
 
         #headerMainContentContainer {
             #navbar {
@@ -9,7 +9,7 @@
 
                 li {
                     a {
-                        color: #25ad3c;
+                        color: mediumspringgreen;
     
                         .navbarIcons {
                             width: 32px;
@@ -19,7 +19,7 @@
                         .navbarTxt {
                             @include respondTo(md) {
                                 &:hover {   
-                                    color: #25ad3c;
+                                    color: mediumspringgreen;
                                 }
                             }
                         }
@@ -38,10 +38,10 @@
 
         #burgerMenu {
             li {
-                border-bottom: #25ad3c solid 1px;
+                border-bottom: mediumspringgreen solid 1px;
 
                 a {
-                    color: #25ad3c;
+                    color: mediumspringgreen;
                 }
             }
         }
@@ -52,20 +52,20 @@
             color: black;
 
             h4, strong {
-                color: #25ad3c !important;
+                color: mediumspringgreen !important;
             }
 
             .sectionTitle {
-                color: #25ad3c !important;
+                color: mediumspringgreen !important;
                 
                 &::after {
-                    background-color: #25ad3c !important;
+                    background-color: mediumspringgreen !important;
                 }
             }
 
             .cta {
                 color: black;
-                background-color: #25ad3c;
+                background-color: mediumspringgreen;
             }
         }
 
@@ -74,18 +74,18 @@
 
             #homeMainContentContainer {
                 @include respondTo(md) {
-                    border: solid 8px #25ad3c !important;
+                    border: solid 8px mediumspringgreen !important;
                 }
 
                 #titleContainer {
                     h1 {
-                        color: #25ad3c !important;
+                        color: mediumspringgreen !important;
                     }
                 }
 
                 #homeSpeechAndCtaContainer {
                     h2 {
-                        color: #25ad3c !important;
+                        color: mediumspringgreen !important;
                     }
     
                     p {
@@ -94,10 +94,10 @@
     
                     #homeCtaMainContainer {
                         #homeCta {
-                            border: #25ad3c solid 2px !important;
+                            border: mediumspringgreen solid 2px !important;
     
                             p {
-                                color: #25ad3c;
+                                color: mediumspringgreen;
                             }
                         }
                     }
@@ -105,15 +105,15 @@
             }
 
             #rightSidenavContainer {
-                background-color: #25ad3c !important;
+                background-color: mediumspringgreen !important;
             }
 
             #mouse {
-                border: solid #25ad3c 2px;
+                border: solid mediumspringgreen 2px;
                 
                 #scrollContainer {
                     &::before {
-                        background-color: #25ad3c;
+                        background-color: mediumspringgreen;
                     }
                 }
             }
@@ -124,13 +124,13 @@
             color: black;
 
             h2, h3, strong {
-                color: #25ad3c !important;
+                color: mediumspringgreen !important;
             }
 
             #skillsContainer {
                 .skills {
                     color: black !important;
-                    background-color: #25ad3c !important;
+                    background-color: mediumspringgreen !important;
                 }
             }
 
@@ -143,33 +143,105 @@
         #contactSection {
             background-color: #333;
 
-            .formTitle {
-                color: #25ad3c;
+            .formMainContainer {
+                background-color: #444;
+                border: solid mediumspringgreen 2px !important;
+
+                .formTitle {
+                    color: mediumspringgreen;
+                }
+    
+                .formBtn {
+                    background: mediumspringgreen;
+    
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 1);
+                    }
+                }
+
+                .formInput {
+                    border: solid 2px mediumspringgreen !important;
+                }
+
+                button.formBtn {
+                    color: #444;
+                    transition: 0.6s;
+
+                    &:hover {
+                        color: white;
+                        transition: 0.6s;
+                    }
+                }
+            }
+        }
+
+        #gallery {
+            background-color: #444;
+
+            h1 {
+                color: mediumspringgreen;
             }
 
-            .formBtn {
-                background: #25ad3c;
+            .projectsGalleryMainsContainers {
+                h2 {
+                    color:mediumspringgreen;
+                }
 
-                &:hover {
-                    background-color: rgba(0, 0, 0, 1);
+                .projectsGalleryContainers {
+                    background-color: #333;
+                    border: solid #666 2px;
+
+                    .projectsGalleryImgs {
+                        border-bottom: solid #666 2px;
+
+                        @include respondTo(md) {
+                            border: 0;
+                        }
+                    }
+
+                    .projectsGalleryCtaDescriptionContainer {
+                        color: white;
+                        
+                        .projectsGalleryCta {
+                            background-color: mediumspringgreen !important;
+                            color: #333 !important;
+
+                            border-bottom: solid #666 2px !important;
+                            border-right: solid #666 2px !important;
+                        }
+                    }
+                }
+
+                @include respondTo(md) {
+                    &.right {
+                        .projectsGalleryImgs {
+                            border-left: solid #666 2px;
+                        }
+                    }
+    
+                    &.left {
+                        .projectsGalleryImgs {
+                            border-right: solid #666 2px;
+                        }
+                    }
                 }
             }
         }
 
         #map {
-            border-top: #25ad3c solid;
-            border-bottom: #25ad3c solid;
+            border-top: mediumspringgreen solid;
+            border-bottom: mediumspringgreen solid;
         }
     }
 
     footer {
         h2, #footerName {
-            color: #25ad3c !important;
+            color: mediumspringgreen !important;
         }
         
         #propertyContainer {
             a {
-                color: #25ad3c;
+                color: mediumspringgreen;
             }
         }
     }
